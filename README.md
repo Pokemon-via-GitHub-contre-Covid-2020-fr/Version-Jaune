@@ -1,6 +1,6 @@
-# Méta données pour "Pokemon-via-GitHub-contre-Covid-2020-fr"
+# Pokémon Jaune - Pokemon-via-GitHub-contre-Covid-2020-fr
 
-[Sur ce dépôt git](https://github.com/Pokemon-via-GitHub-contre-Covid-2020-fr/meta), [je](https://naereen.github.io/me/) vais stocker les méta données liées à toutes les activités de [ce projet "Pokemon-via-GitHub-contre-Covid-2020-fr"](https://github.com/Pokemon-via-GitHub-contre-Covid-2020-fr/).
+[Sur ce dépôt git](https://github.com/Pokemon-via-GitHub-contre-Covid-2020-fr/Version-Jaune), nous allons stocker les sauvegardes et captures d'écran de notre première partie de Pokémon Jaune, suivant les idées présentées dans [ce projet "Pokemon-via-GitHub-contre-Covid-2020-fr"](https://github.com/Pokemon-via-GitHub-contre-Covid-2020-fr/).
 
 <img align="right" width="50%" src="logos/Pokemon_via_GitHub_logo_HD.png" alt="Logo, Pokemon_via_GitHub_logo_HD.png">
 
