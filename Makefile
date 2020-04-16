@@ -26,7 +26,12 @@ start_playing:
 start_playing_qt:
 	mgba-qt -5 --savestate Pokemon_Yellow_FRENCH_GBC-HS.sav Pokemon_Yellow_FRENCH_GBC-HS.gbc
 
-play:	commit_start start_playing commit_done
+play:	check_free_slot commit_start start_playing commit_done
+
+check_free_slot:
+	git pull
+	! git log -1 | grep -q START
+	echo "The slot is free. Let's play!"
 
 commit_start:
 	echo "START ${USER} commence à `date`, auto commit avec 'make commit_start'" | tee --append whoPlayedWhen.log
