@@ -21,7 +21,11 @@ check_dub:
 	cat Pokemon_Yellow_FRENCH_GBC-HS.gbc.dub
 
 start_playing:
-	mgba -5 Pokemon_Yellow_FRENCH_GBC-HS.gbc
+	mgba -5 --savestate Pokemon_Yellow_FRENCH_GBC-HS.sav Pokemon_Yellow_FRENCH_GBC-HS.gbc
+
+start_playing_qt:
+	mgba-qt -5 --savestate Pokemon_Yellow_FRENCH_GBC-HS.sav Pokemon_Yellow_FRENCH_GBC-HS.gbc
+
 play:	commit_start start_playing commit_done
 
 commit_start:
