@@ -1,1 +1,2 @@
 START  commence à , auto commit avec 'make commit_start'
+DONE  termine à , auto commit avec 'make commit_done'
