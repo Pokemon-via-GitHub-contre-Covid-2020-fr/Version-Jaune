@@ -25,17 +25,17 @@ start_playing:
 play:	commit_start start_playing commit_done
 
 commit_start:
-	echo "START $(whoami) commence à $(date), auto commit avec 'make commit_start'" | tee --append whoPlayedWhen.log
+	echo "START ${USER} commence à `date`, auto commit avec 'make commit_start'" | tee --append whoPlayedWhen.log
 	git add whoPlayedWhen.log
-	git commit -m "START $(whoami) commence, auto commit avec 'make commit_start'"
+	git commit -m "START ${USER} commence, auto commit avec 'make commit_start'"
 	git push
 
 commit_done:
-	echo "DONE $(whoami) termine à $(date), auto commit avec 'make commit_done'" | tee --append whoPlayedWhen.log
+	echo "DONE ${USER} termine à `date`, auto commit avec 'make commit_done'" | tee --append whoPlayedWhen.log
 	git add whoPlayedWhen.log
 	git add Pokemon_Yellow_FRENCH_GBC-HS.sav
 	git add screenshots/*.png
-	git commit -m "DONE $(whoami) termine, auto commit avec 'make commit_done'"
+	git commit -m "DONE ${USER} termine, auto commit avec 'make commit_done'"
 	git push
 
 clean_screenshots:
