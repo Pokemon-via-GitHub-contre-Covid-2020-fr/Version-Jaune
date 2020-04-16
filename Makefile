@@ -22,3 +22,16 @@ check_dub:
 
 play:
 	mgba -5 Pokemon_Yellow_FRENCH_GBC-HS.gbc
+
+commit_start:
+	echo "START $(whoami) commence à $(date), auto commit avec 'make commit_start'" | tee --append whoPlayedWhen.log
+	git add whoPlayedWhen.log
+	git commit -m "START $(whoami) commence, auto commit avec 'make commit_start'"
+
+commit_done:
+	git add Pokemon_Yellow_FRENCH_GBC-HS.sav
+	cd screenshots/
+	exiftool -v2 -fast -overwrite_original_in_place ./*.png
+	advpng -z -2 ./*.png
+	git add ./*.png
+	git commit -m "DONE $(whoami) termine, auto commit avec 'make commit_start'"
