@@ -14,7 +14,7 @@
 - Il faut regarder [l'auteur du dernier commit](https://github.com/Pokemon-via-GitHub-contre-Covid-2020-fr/Version-Jaune/commits/master), qui a commencé sa session de jeu avec un commit dont le message commence par `"START ..."`.
 
 ## Qui joue ensuite ?
-- Il n'y a pas et *il n'y aura pas* de mécanisme de file d'attente : dès que le joueur courant a terminé sa session de jeu qui a terminé sa session de jeu avec un commit dont le message commence par `"END ..."`, n'importe qui peut venir jouer et prendre le relai !
+- Il n'y a pas et *il n'y aura pas* de mécanisme de file d'attente : dès que le joueur courant arrête, c'est-à-dire qu'elle a terminé sa session de jeu (avec un commit dont le message commence par `"END ..."`), n'importe qui peut venir jouer et prendre le relai !
 
 - Essayez de gérer cela intelligemment, et ne soyez pas trop pressé : si vous vous abonnez [au flux RSS](https://github.com/Pokemon-via-GitHub-contre-Covid-2020-fr/Version-Jaune/commits/master.atom) du projet, vous pouvez recevoir des notifications ou des mails quand un joueur commence et termine sa session.
 
