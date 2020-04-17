@@ -20,14 +20,11 @@ check_dub:
 	du -b Pokemon_Yellow_FRENCH_GBC-HS.gbc
 	cat Pokemon_Yellow_FRENCH_GBC-HS.gbc.dub
 
-start_playing_old:
-	mgba -5 --savestate Pokemon_Yellow_FRENCH_GBC-HS.sav Pokemon_Yellow_FRENCH_GBC-HS.gbc
-
 start_playing:
-	mgba -f -5 --savestate Pokemon_Yellow_FRENCH_GBC-HS.sav Pokemon_Yellow_FRENCH_GBC-HS.gbc
+	mgba -6 --savestate Pokemon_Yellow_FRENCH_GBC-HS.sav Pokemon_Yellow_FRENCH_GBC-HS.gbc
 
 start_playing_qt:
-	mgba-qt -5 --savestate Pokemon_Yellow_FRENCH_GBC-HS.sav Pokemon_Yellow_FRENCH_GBC-HS.gbc
+	mgba-qt -6 --savestate Pokemon_Yellow_FRENCH_GBC-HS.sav Pokemon_Yellow_FRENCH_GBC-HS.gbc
 
 play:	check_free_slot commit_start start_playing commit_done
 
