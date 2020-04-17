@@ -43,11 +43,20 @@ commit_done:
 	echo "DONE ${USER} termine à `date`, auto commit avec 'make commit_done'" | tee --append whoPlayedWhen.log
 	git add whoPlayedWhen.log
 	git add Pokemon_Yellow_FRENCH_GBC-HS.sav
-	git add screenshots/*.png
+	git add screenshots*/*.png
 	git commit -m "DONE ${USER} termine, auto commit avec 'make commit_done'"
 	git push
 
 clean_screenshots:
 	cd screenshots/
+	exiftool -v2 -fast -overwrite_original_in_place ./*.png
+	advpng -z -2 ./*.png
+	cd ../screenshots_badges/
+	exiftool -v2 -fast -overwrite_original_in_place ./*.png
+	advpng -z -2 ./*.png
+	cd ../screenshots_maps/
+	exiftool -v2 -fast -overwrite_original_in_place ./*.png
+	advpng -z -2 ./*.png
+	cd ../screenshots_teams/
 	exiftool -v2 -fast -overwrite_original_in_place ./*.png
 	advpng -z -2 ./*.png

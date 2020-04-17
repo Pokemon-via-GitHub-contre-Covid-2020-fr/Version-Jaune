@@ -10,6 +10,33 @@
 
 # Foire aux questions
 
+## Comment jouer ?
+Il faut suivre les instructions suivantes :
+
+1. Créer un compte GitHub, ajouter [une étoile au projet](https://github.com/Pokemon-via-GitHub-contre-Covid-2020-fr/Version-Jaune/stargazers) (ou au [méta projet](https://github.com/Pokemon-via-GitHub-contre-Covid-2020-fr/Pokemon-via-GitHub-contre-Covid-2020-fr.github.io)). Je vous invite à devenir membre de l'organisation, puis [il vous faut éditer ce fichier](https://github.com/Pokemon-via-GitHub-contre-Covid-2020-fr/Pokemon-via-GitHub-contre-Covid-2020-fr.github.io/blob/master/whois.md) sans faire de fusio-demande (= *pull request*).
+
+2. Télécharger un émulateur, **je recommande mGBA** ou Visual Boy Advance, **sur un ordinateur** et pas un téléphone,
+
+3. Télécharger la ROM, vérifier que c'est la bonne en vérifiant [sa somme `md5sum`](Pokemon_Yellow_FRENCH_GBC-HS.gbc.md5sum), [son nombre de bits](Pokemon_Yellow_FRENCH_GBC-HS.gbc.md5sum) (et les informations renvoyées par [`file Pokemon_Yellow_FRENCH_GBC-HS.gbc`](Pokemon_Yellow_FRENCH_GBC-HS.gbc.md5sum) dans un terminal sous GNU/Linux). Regarder [ce ticket](https://github.com/Pokemon-via-GitHub-contre-Covid-2020-fr/Version-Jaune/issues/1) si vous avez du mal à télécharger la ROM.
+
+4. [Cloner le dépôt](https://github.com/Pokemon-via-GitHub-contre-Covid-2020-fr/Version-Jaune), et vérifier que vous pouvez
+
+## Avec le `Makefile`
+
+Une fois le dépôt cloné, si vous êtes sous GNU/Linux ou Mac OS, le [fichier `Makefile`](https://github.com/Pokemon-via-GitHub-contre-Covid-2020-fr/Version-Jaune/blob/master/Makefile) donne quelques commandes pour automatiser certaines choses 
+
+- `make metadata` permet de vérifier que la ROM `Pokemon_Yellow_FRENCH_GBC-HS.gbc` téléchargée est la bonne ;
+- `make start_playing` permet de commencer à jouer avec mGBA,
+- `make play` automatise l'algorithme de gestion de jeu :
+   1. vérifier que personne n'est en train de jouer (avec `make check_free_slot`),
+   2. écrire et envoyer un commit disant que le joueur actuel est en train de jouer (ie, un commit dont le message commence par `"START user ..."`) (avec `make commit_start`),
+   3. lance mGBA sur la sauvegarde actuelle (avec `make start_playing`),
+   4. quand mGBA se ferme, ajoute dans un commit git la nouvelle sauvegarde, et les captures d'écran (de position réelle, des badges, de position sur la carte, et de l'équipe actuelle), et envoie un commit de fin de session (ie, un commit dont le message commence par `"DONE user ..."`_) (avec `make commit_done`).
+
+---
+
+# Question à propos du jeu
+
 ## Qui joue actuellement ?
 - Il faut regarder [l'auteur du dernier commit](https://github.com/Pokemon-via-GitHub-contre-Covid-2020-fr/Version-Jaune/commits/master), qui a commencé sa session de jeu avec un commit dont le message commence par `"START ..."`.
 
