@@ -44,7 +44,7 @@ commit_done:
 	git add whoPlayedWhen.log
 	git add Pokemon_Yellow_FRENCH_GBC-HS.sav
 	git add screenshots*/*.png
-	git commit -m "DONE ${USER} termine, auto commit avec 'make commit_done'"
+	git commit -m "DONE ${USER} termine, auto commit avec 'make commit_done'\n`./zenity_script_to_enter_summary.sh`" || git commit -m "DONE ${USER} termine, auto commit avec 'make commit_done'\n"
 	git push
 
 clean_screenshots:
