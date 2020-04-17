@@ -20,8 +20,11 @@ check_dub:
 	du -b Pokemon_Yellow_FRENCH_GBC-HS.gbc
 	cat Pokemon_Yellow_FRENCH_GBC-HS.gbc.dub
 
-start_playing:
+start_playing_old:
 	mgba -5 --savestate Pokemon_Yellow_FRENCH_GBC-HS.sav Pokemon_Yellow_FRENCH_GBC-HS.gbc
+
+start_playing:
+	mgba -f -5 --savestate Pokemon_Yellow_FRENCH_GBC-HS.sav Pokemon_Yellow_FRENCH_GBC-HS.gbc
 
 start_playing_qt:
 	mgba-qt -5 --savestate Pokemon_Yellow_FRENCH_GBC-HS.sav Pokemon_Yellow_FRENCH_GBC-HS.gbc
@@ -44,7 +47,7 @@ commit_done:
 	git add whoPlayedWhen.log
 	git add Pokemon_Yellow_FRENCH_GBC-HS.sav
 	git add screenshots*/*.png
-	git commit -m "DONE ${USER} termine, auto commit avec 'make commit_done'\n\n`./zenity_script_to_enter_summary.sh`" || git commit -m "DONE ${USER} termine, auto commit avec 'make commit_done'"
+	git commit -m "DONE ${USER} termine, auto commit avec 'make commit_done'`./zenity_script_to_enter_summary.sh`" || git commit -m "DONE ${USER} termine, auto commit avec 'make commit_done'"
 	git push
 
 clean_screenshots:

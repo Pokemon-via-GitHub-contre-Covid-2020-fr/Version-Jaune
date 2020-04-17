@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+echo -e "\n\n"
 zenity --entry \
        --timeout=60 --width=640 --height=440 \
        --title="Pokémon via GitHub contre Covid-19" \
