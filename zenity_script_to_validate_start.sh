@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Script bash pour appeler (si disponible) "zenity --question" pour valider le commit.
+# Script bash pour appeler (si disponible) "zenity --question" pour valider le commit de fin de jeu.
 #
 
 type zenity > /dev/null && { zenity --question \
