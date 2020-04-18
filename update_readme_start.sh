@@ -11,8 +11,11 @@ fi
 echo "$author"
 
 sed -i.backup s/"^.*joue actuellement."/"$author"/ README.md
-#diff README.md README.md.backup
+
+# diff README.md README.md.backup  # DEBUG
 git diff README.md README.md.backup
-#echo "OK pour supprimer le fichier README.md.backup et valider ce changement ?"
-#read
-#trash README.md.backup
+
+# echo "OK pour supprimer le fichier README.md.backup et valider ce changement ?"  # DEBUG
+# read  # DEBUG
+
+# trash README.md.backup  # DEBUG
