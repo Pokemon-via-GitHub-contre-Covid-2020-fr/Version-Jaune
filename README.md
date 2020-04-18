@@ -19,7 +19,7 @@ Il faut suivre les instructions suivantes :
 
 3. Télécharger la ROM, vérifier que c'est la bonne en vérifiant [sa somme `md5sum`](Pokemon_Yellow_FRENCH_GBC-HS.gbc.md5sum), [son nombre de bits](Pokemon_Yellow_FRENCH_GBC-HS.gbc.md5sum) (et les informations renvoyées par [`file Pokemon_Yellow_FRENCH_GBC-HS.gbc`](Pokemon_Yellow_FRENCH_GBC-HS.gbc.md5sum) dans un terminal sous GNU/Linux). Regarder [ce ticket](https://github.com/Pokemon-via-GitHub-contre-Covid-2020-fr/Version-Jaune/issues/1) si vous avez du mal à télécharger la ROM.
 
-4. [Cloner le dépôt](https://github.com/Pokemon-via-GitHub-contre-Covid-2020-fr/Version-Jaune), et vérifier que vous pouvez
+4. [Cloner le dépôt](https://github.com/Pokemon-via-GitHub-contre-Covid-2020-fr/Version-Jaune), et vérifier que vous pouvez lancer le jeu, et charger la sauvegarde. Vérifier que vous pouvez sauvegarder, puis ensuite prenez l'habitude de lancer une session de jeu avec `make play`, qui automatise l'algorithme de gestion de conflit de jeux (cf. explications ci-dessous).
 
 ## Avec le `Makefile`
 
