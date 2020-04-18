@@ -37,10 +37,12 @@ Une fois le dépôt cloné, si vous êtes sous GNU/Linux ou Mac OS, le [fichier 
 
 # Questions à propos du jeu
 
-## Qui joue actuellement ?
+## Qui est en train de jouer ?
 > Il faut regarder [l'auteur du dernier commit](https://github.com/Pokemon-via-GitHub-contre-Covid-2020-fr/Version-Jaune/commits/master), qui a commencé sa session de jeu avec un commit dont le message commence par `"START ..."`.
 
 **Personne** ne joue actuellement.
+
+> La ligne précédente est normalement [mise à jour automatiquement](update_readme_start.sh).
 
 ## Qui joue ensuite ?
 - Il n'y a pas et *il n'y aura pas* de mécanisme de file d'attente : dès que le joueur courant arrête, c'est-à-dire qu'elle a terminé sa session de jeu (avec un commit dont le message commence par `"END ..."`), n'importe qui peut venir jouer et prendre le relai !
@@ -56,7 +58,16 @@ Une fois le dépôt cloné, si vous êtes sous GNU/Linux ou Mac OS, le [fichier 
 
 Dernière ligne de l'historique :
 
-TODO find a way to include the last 6 lines of `git log -1`.
+- Lilian Besson (il y a 2 jours) : DONE lilian termine, auto commit avec 'make commit_done' (commit ab001f8) ;
+- Lilian Besson (il y a 2 jours) : START lilian commence, auto commit avec 'make commit_start' (commit 931968d) ;
+- Lilian Besson (il y a 2 jours) : DONE lilian termine, auto commit avec 'make commit_done' (commit ccb3a3b) ;
+- Lilian Besson (il y a 2 jours) : START lilian commence, auto commit avec 'make commit_start' (commit ee2a57a) ;
+- Lilian Besson (il y a 2 jours) : DONE  termine, auto commit avec 'make commit_done' (commit f78a510) ;
+- Lilian Besson (il y a 2 jours) : START  commence, auto commit avec 'make commit_start' (commit 08f2df4) ;
+
+TODO find a way to include the last 10 lines of `git log -1`.
+
+> La ligne précédente est normalement [mise à jour automatiquement](update_readme_done.sh).
 
 ## Dernière question ?
 - [Posez une question](https://github.com/Pokemon-via-GitHub-contre-Covid-2020-fr/Version-Jaune/issues/new) en ouvrant un ticket.

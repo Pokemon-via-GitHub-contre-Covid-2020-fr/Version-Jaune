@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#
+# Script bash pour mettre à jour le fichier README.md pour afficher quels sont les derniers joueurs.
+#
+# 2nd part, update the log of last players
+#
+echo "Qui a joué quand ?"
+git log --oneline --graph --pretty=format:'- %an (%cr) :%d %s (commit %h) ;' --abbrev-commit --date=relative | sed s/'* -'/'-'/ | grep "\(START\|DONE\)" | tail -n6
+
+echo "TODO find a way to include the last 6 lines of git log."
