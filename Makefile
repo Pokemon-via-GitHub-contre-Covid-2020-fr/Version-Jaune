@@ -34,21 +34,21 @@ check_free_slot:
 	echo "The slot is free. Let's play!"
 
 commit_start:
-	./zenity_script_to_validate_start.sh
+	./scripts/zenity_script_to_validate_start.sh
 	echo "START ${USER} commence à `date`, auto commit avec 'make commit_start'" | tee --append whoPlayedWhen.log
-	./update_readme_start.sh
+	./scripts/update_readme_start.sh
 	git add whoPlayedWhen.log README.md
 	git commit -m "START ${USER} commence, auto commit avec 'make commit_start'"
 	git push
 
 commit_done:
-	./zenity_script_to_validate_end.sh
+	./scripts/zenity_script_to_validate_end.sh
 	echo "DONE ${USER} termine à `date`, auto commit avec 'make commit_done'" | tee --append whoPlayedWhen.log
-	./update_readme_done.sh
+	./scripts/update_readme_done.sh
 	git add whoPlayedWhen.log README.md
 	git add Pokemon_Yellow_FRENCH_GBC-HS.sav
 	git add screenshots*/*.png
-	git commit -m "DONE ${USER} termine, auto commit avec 'make commit_done'`./zenity_script_to_enter_summary.sh`" || git commit -m "DONE ${USER} termine, auto commit avec 'make commit_done'"
+	git commit -m "DONE ${USER} termine, auto commit avec 'make commit_done'`./scripts/zenity_script_to_enter_summary.sh`" || git commit -m "DONE ${USER} termine, auto commit avec 'make commit_done'"
 	git push
 
 clean_screenshots:
