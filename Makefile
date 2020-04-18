@@ -36,9 +36,9 @@ check_free_slot:
 commit_start:
 	./zenity_script_to_validate_start.sh
 	echo "START ${USER} commence à `date`, auto commit avec 'make commit_start'" | tee --append whoPlayedWhen.log
-	git commit -m "START ${USER} commence, auto commit avec 'make commit_start'"
 	./update_readme_start.sh
 	git add whoPlayedWhen.log README.md
+	git commit -m "START ${USER} commence, auto commit avec 'make commit_start'"
 	git push
 
 commit_done:
