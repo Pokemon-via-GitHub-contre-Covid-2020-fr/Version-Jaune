@@ -44,7 +44,7 @@ commit_start:
 commit_done:
 	./zenity_script_to_validate_end.sh
 	echo "DONE ${USER} termine à `date`, auto commit avec 'make commit_done'" | tee --append whoPlayedWhen.log
-	./update_readme_end.sh
+	./update_readme_done.sh
 	git add whoPlayedWhen.log README.md
 	git add Pokemon_Yellow_FRENCH_GBC-HS.sav
 	git add screenshots*/*.png
