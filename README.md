@@ -40,7 +40,7 @@ Une fois le dépôt cloné, si vous êtes sous GNU/Linux ou Mac OS, le [fichier 
 ## Qui est en train de jouer ?
 > Il faut regarder [l'auteur du dernier commit](https://github.com/Pokemon-via-GitHub-contre-Covid-2020-fr/Version-Jaune/commits/master), qui a commencé sa session de jeu avec un commit dont le message commence par `"START ..."`.
 
-**Lilian Besson** joue actuellement.
+**Personne** ne joue actuellement.
 
 > La ligne précédente est normalement [mise à jour automatiquement](update_readme_start.sh).
 
