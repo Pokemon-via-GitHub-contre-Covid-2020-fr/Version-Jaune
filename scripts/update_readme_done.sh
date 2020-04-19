@@ -5,6 +5,6 @@
 # 2nd part, update the log of last players
 #
 echo "Qui a joué quand ?"
-git log --oneline --graph --pretty=format:'- %an (%cr) :%d %s (commit %h) ;' --abbrev-commit --date=relative | sed s/'* -'/'-'/ | grep "\(START\|DONE\)" | tail -n10
+git log --oneline --graph --pretty=format:'- %an (%cr) :%d %s (commit %h) ;' --abbrev-commit --date=relative | sed s/'* -'/'-'/ | grep "\(START\|DONE\)" | head -n10
 
 echo "TODO find a way to include the last 10 lines of git log."
