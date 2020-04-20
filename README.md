@@ -65,8 +65,6 @@ Dernière ligne de l'historique :
 - Lilian Besson (il y a 2 jours) : DONE  termine, auto commit avec 'make commit_done' (commit f78a510) ;
 - Lilian Besson (il y a 2 jours) : START  commence, auto commit avec 'make commit_start' (commit 08f2df4) ;
 
-TODO find a way to include the last 10 lines of `git log -1`.
-
 > La ligne précédente est normalement [mise à jour automatiquement](update_readme_done.sh).
 
 ## Dernière question ?
