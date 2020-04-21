@@ -2,9 +2,10 @@
 #
 # Script bash pour mettre à jour le fichier README.md pour afficher quels sont les derniers joueurs.
 #
-# 2nd part, update the log of last players
-#
 echo "Qui a joué quand ?"
-git log --oneline --graph --pretty=format:'- %an (%cr) :%d %s (commit %h) ;' --abbrev-commit --date=relative | sed s/'* -'/'-'/ | grep "\(START\|DONE\)" | head -n10
+playlog=$( git log --oneline --pretty=format:'- %an (%cr) :%d %s (commit %h) ;' --abbrev-commit --date=relative | sed s/'* -'/'-'/ | grep "\(START\|DONE\)" | head -n10 )
 
-echo "TODO find a way to include the last 10 lines of git log."
+# 2nd part, update the log of last players
+begin="Dernière ligne de l'historique :"
+end="> La ligne précédente est normalement"
+perl -0777 -pi -e "s/$begin.*?$end/$begin\n\n$playlog\n\n$end/sg;" README.md
