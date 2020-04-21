@@ -58,12 +58,16 @@ Une fois le dépôt cloné, si vous êtes sous GNU/Linux ou Mac OS, le [fichier 
 
 Dernière ligne de l'historique :
 
-- Lilian Besson (il y a 2 jours) : DONE lilian termine, auto commit avec 'make commit_done' (commit ab001f8) ;
-- Lilian Besson (il y a 2 jours) : START lilian commence, auto commit avec 'make commit_start' (commit 931968d) ;
-- Lilian Besson (il y a 2 jours) : DONE lilian termine, auto commit avec 'make commit_done' (commit ccb3a3b) ;
-- Lilian Besson (il y a 2 jours) : START lilian commence, auto commit avec 'make commit_start' (commit ee2a57a) ;
-- Lilian Besson (il y a 2 jours) : DONE  termine, auto commit avec 'make commit_done' (commit f78a510) ;
-- Lilian Besson (il y a 2 jours) : START  commence, auto commit avec 'make commit_start' (commit 08f2df4) ;
+- Edouard Leurent (3 minutes ago) : DONE eleur termine, auto commit avec 'make commit_done' (commit f6ca096) ;
+- Edouard Leurent (20 minutes ago) : START eleur commence, auto commit avec 'make commit_start' (commit ab24ae1) ;
+- Remi100fa1000 (14 hours ago) : DONE remib termine, auto commit avec 'make commit_done' (commit d7c9381) ;
+- Remi100fa1000 (14 hours ago) : START remib commence, auto commit avec 'make commit_start' (commit ec54f8d) ;
+- Lilian Besson (15 hours ago) : DONE lilian termine, auto commit avec 'make commit_done' (commit a12d397) ;
+- Lilian Besson (15 hours ago) : START lilian commence, auto commit avec 'make commit_start' (commit 22da759) ;
+- Edouard Leurent (16 hours ago) : DONE  termine, auto commit avec 'make commit_done' (commit f79bbca) ;
+- Edouard Leurent (16 hours ago) : START  commence, auto commit avec 'make commit_start' (commit 95cba29) ;
+- Lilian Besson (24 hours ago) : DONE lilian termine, auto commit avec 'make commit_done' (commit 336da34) ;
+- Lilian Besson (24 hours ago) : START lilian commence, auto commit avec 'make commit_start' (commit 3390a96) ;
 
 > La ligne précédente est normalement [mise à jour automatiquement](update_readme_done.sh).
 
