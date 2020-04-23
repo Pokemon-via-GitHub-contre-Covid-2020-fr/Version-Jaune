@@ -23,10 +23,18 @@ check_dub:
 start_playing:
 	mgba -6 --savestate Pokemon_Yellow_FRENCH_GBC-HS.sav Pokemon_Yellow_FRENCH_GBC-HS.gbc
 
+start_playing_mgba:
+	mgba -6 --savestate Pokemon_Yellow_FRENCH_GBC-HS.sav Pokemon_Yellow_FRENCH_GBC-HS.gbc
+
 start_playing_qt:
 	mgba-qt -6 --savestate Pokemon_Yellow_FRENCH_GBC-HS.sav Pokemon_Yellow_FRENCH_GBC-HS.gbc
 
+start_playing_vba:
+	vba --video-4x --filter-lq2x --savestate Pokemon_Yellow_FRENCH_GBC-HS.sav Pokemon_Yellow_FRENCH_GBC-HS.gbc
+
 play:	check_free_slot commit_start start_playing commit_done
+play_mgba:	check_free_slot commit_start start_playing_mgba commit_done
+play_vba:	check_free_slot commit_start start_playing_vba commit_done
 
 check_free_slot:
 	git pull
