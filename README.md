@@ -8,6 +8,10 @@
 
 ---
 
+# Discord
+
+Venez discuter sur [ce serveur Discord](https://discord.gg/xEpj7D) ! Dans le canal **"Version Jaune"**.
+
 # Foire aux questions
 
 ## Comment jouer ?
