@@ -29,10 +29,12 @@ echo "The slot is free. Let's play!"
 
 # XXX lancement du jeu
 echo "Lancement de l'émulateur en travail de fond..."
-make start_playing &
+mgba -3 --savestate Pokemon_Yellow_FRENCH_GBC-HS.sav Pokemon_Yellow_FRENCH_GBC-HS.gbc &
+
+
 echo "Pause de 10 secondes..."
 sleep 10
-
+xx
 WID=$(xdotool search "mGBA" | head -1)
 xdotool windowactivate --sync $WID
 
@@ -83,7 +85,6 @@ numero_derniere_sauvegarde+=1
 echo do_screenshot screenshots/Pokemon_Yellow_FRENCH_GBC-HS-${numero_derniere_sauvegarde}.png
 # do_screenshot screenshots/Pokemon_Yellow_FRENCH_GBC-HS-${numero_derniere_sauvegarde}.png
 sleep 5
-clear
 
 
 # Capture d'écran pokedex
@@ -98,7 +99,6 @@ echo do_screenshot screenshots_pokedex/Pokemon_Yellow_FRENCH_GBC-HS-${numero_der
 # do_screenshot screenshots_pokedex/Pokemon_Yellow_FRENCH_GBC-HS-${numero_derniere_sauvegarde}.png
 hit_these_keys w w
 sleep 5
-clear
 
 # Capture d'écran teams
 
@@ -111,7 +111,6 @@ echo do_screenshot screenshots_teams/Pokemon_Yellow_FRENCH_GBC-HS-${numero_derni
 # do_screenshot screenshots_teams/Pokemon_Yellow_FRENCH_GBC-HS-${numero_derniere_sauvegarde}.png
 hit_these_keys w w
 sleep 5
-clear
 
 # Capture d'écran maps
 
@@ -124,7 +123,6 @@ echo do_screenshot screenshots_maps/Pokemon_Yellow_FRENCH_GBC-HS-${numero_dernie
 # do_screenshot screenshots_maps/Pokemon_Yellow_FRENCH_GBC-HS-${numero_derniere_sauvegarde}.png
 hit_these_keys w w w
 sleep 5
-clear
 
 # Capture d'écran badges
 
@@ -137,7 +135,6 @@ echo do_screenshot screenshots_badges/Pokemon_Yellow_FRENCH_GBC-HS-${numero_dern
 # do_screenshot screenshots_badges/Pokemon_Yellow_FRENCH_GBC-HS-${numero_derniere_sauvegarde}.png
 hit_these_keys w
 sleep 5
-clearxx
 
 # XXX conclusion
 echo git add screenshots*/*.png
