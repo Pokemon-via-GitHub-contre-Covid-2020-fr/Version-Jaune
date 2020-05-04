@@ -28,24 +28,28 @@ echo "The slot is free. Let's play!"
 
 
 # XXX lancement du jeu
+echo "Lancement de l'émulateur en travail de fond..."
 make start_playing &
+echo "Pause de 10 secondes..."
+sleep 10
 
-WID=`xdotool search "mGBA" | head -1`
+WID=$(xdotool search "mGBA" | head -1)
 xdotool windowactivate --sync $WID
 
 # XXX script pour simuler un appui d'une touche
 # http://wiki.linuxquestions.org/wiki/List_of_keysyms
 function hit_this_key () {
-       sleep 1
+       sleep 3
        xdotool windowactivate --sync $WID
        xdotool key --clearmodifiers $1
-       echo "La touche $* a été simulée..."
+       echo "  La touche $* a été simulée..."
 }
 function hit_these_keys () {
-       sleep 1
+       echo "  Simulation des touches $* dans trois secondes..."
+       sleep 3
        xdotool windowactivate --sync $WID
        xdotool key --clearmodifiers --delay 1000 $*
-       echo "Les touches $* ont été simulées..."
+       echo "  Les touches $* ont été simulées..."
 }
 
 if type xfce4-screenshooter > /dev/null 2>/dev/null; then
@@ -70,46 +74,70 @@ declare -i numero_derniere_sauvegarde
 numero_derniere_sauvegarde=$(find ./screenshots*/Pokemon_Yellow_FRENCH_GBC-HS-* | grep -o 'Pokemon_Yellow_FRENCH_GBC-HS-.*' | sed s/'Pokemon_Yellow_FRENCH_GBC-HS-'/''/g | sed s/'.png'/''/g | sort -n | tail -n1)
 
 # Lance le jeu
-echo "Ouvrer la fenêtre de mGBA"
-sleep 1
+echo "Ouverture la fenêtre de mGBA et appui de touches simulé..."
+sleep 10
 
-hit_these_keys x x x x x
+hit_these_keys w w w w x x
 # Capture d'écran position
 numero_derniere_sauvegarde+=1
 echo do_screenshot screenshots/Pokemon_Yellow_FRENCH_GBC-HS-${numero_derniere_sauvegarde}.png
 # do_screenshot screenshots/Pokemon_Yellow_FRENCH_GBC-HS-${numero_derniere_sauvegarde}.png
+sleep 5
+clear
+
 
 # Capture d'écran pokedex
-read  # pause
+
+# echo "Enter to continue ... DEBUG"
+# read  # pause
+
 hit_these_keys Return x
+
 numero_derniere_sauvegarde+=1
 echo do_screenshot screenshots_pokedex/Pokemon_Yellow_FRENCH_GBC-HS-${numero_derniere_sauvegarde}.png
 # do_screenshot screenshots_pokedex/Pokemon_Yellow_FRENCH_GBC-HS-${numero_derniere_sauvegarde}.png
 hit_these_keys w w
+sleep 5
+clear
 
 # Capture d'écran teams
-read  # pause
+
+# echo "Enter to continue ... DEBUG"
+# read  # pause
+
 hit_these_keys Return Down x
 numero_derniere_sauvegarde+=1
 echo do_screenshot screenshots_teams/Pokemon_Yellow_FRENCH_GBC-HS-${numero_derniere_sauvegarde}.png
 # do_screenshot screenshots_teams/Pokemon_Yellow_FRENCH_GBC-HS-${numero_derniere_sauvegarde}.png
 hit_these_keys w w
+sleep 5
+clear
 
 # Capture d'écran maps
-read  # pause
+
+# echo "Enter to continue ... DEBUG"
+# read  # pause
+
 hit_these_keys Return Down x x x
 numero_derniere_sauvegarde+=1
 echo do_screenshot screenshots_maps/Pokemon_Yellow_FRENCH_GBC-HS-${numero_derniere_sauvegarde}.png
 # do_screenshot screenshots_maps/Pokemon_Yellow_FRENCH_GBC-HS-${numero_derniere_sauvegarde}.png
 hit_these_keys w w w
+sleep 5
+clear
 
 # Capture d'écran badges
-read  # pause
+
+# echo "Enter to continue ... DEBUG"
+# read  # pause
+
 hit_these_keys Return Down x
 numero_derniere_sauvegarde+=1
 echo do_screenshot screenshots_badges/Pokemon_Yellow_FRENCH_GBC-HS-${numero_derniere_sauvegarde}.png
 # do_screenshot screenshots_badges/Pokemon_Yellow_FRENCH_GBC-HS-${numero_derniere_sauvegarde}.png
 hit_these_keys w
+sleep 5
+clearxx
 
 # XXX conclusion
 echo git add screenshots*/*.png
