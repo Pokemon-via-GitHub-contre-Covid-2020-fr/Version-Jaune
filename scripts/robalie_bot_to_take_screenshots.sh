@@ -20,7 +20,7 @@ fi
 
 
 # XXX Vérification avant de jouer
-echo git pull
+git pull
 if { git log -1 | grep -q START; }; then
        exit 2
 fi
@@ -43,6 +43,8 @@ xdotool windowactivate --sync $WID
 function cleanup_sav() {
        echo git checkout -- Pokemon_Yellow_FRENCH_GBC-HS.sav
        git checkout -- Pokemon_Yellow_FRENCH_GBC-HS.sav
+       echo pkill mgba
+       pkill mgba
 }
 trap cleanup_sav EXIT
 trap cleanup_sav SIGINT
@@ -95,7 +97,7 @@ hit_these_keys x x
 # Capture d'écran position
 numero_derniere_sauvegarde+=1
 echo do_screenshot "screenshots/${name}-${numero_derniere_sauvegarde}.png"
-# do_screenshot "screenshots/${name}-${numero_derniere_sauvegarde}.png"
+do_screenshot "screenshots/${name}-${numero_derniere_sauvegarde}.png"
 sleep 5
 
 
@@ -108,7 +110,7 @@ hit_these_keys Return x
 
 numero_derniere_sauvegarde+=1
 echo do_screenshot "screenshots_pokedex/${name}-${numero_derniere_sauvegarde}.png"
-# do_screenshot "screenshots_pokedex/${name}-${numero_derniere_sauvegarde}.png"
+do_screenshot "screenshots_pokedex/${name}-${numero_derniere_sauvegarde}.png"
 hit_these_keys w z w z
 sleep 5
 
@@ -120,7 +122,7 @@ sleep 5
 hit_these_keys Return Down x
 numero_derniere_sauvegarde+=1
 echo do_screenshot "screenshots_teams/${name}-${numero_derniere_sauvegarde}.png"
-# do_screenshot "screenshots_teams/${name}-${numero_derniere_sauvegarde}.png"
+do_screenshot "screenshots_teams/${name}-${numero_derniere_sauvegarde}.png"
 hit_these_keys w z w z
 sleep 5
 
@@ -132,7 +134,7 @@ sleep 5
 hit_these_keys Return Down x x x
 numero_derniere_sauvegarde+=1
 echo do_screenshot "screenshots_maps/${name}-${numero_derniere_sauvegarde}.png"
-# do_screenshot "screenshots_maps/${name}-${numero_derniere_sauvegarde}.png"
+do_screenshot "screenshots_maps/${name}-${numero_derniere_sauvegarde}.png"
 hit_these_keys w z w z w z
 sleep 5
 
@@ -144,16 +146,21 @@ sleep 5
 hit_these_keys Return Down x
 numero_derniere_sauvegarde+=1
 echo do_screenshot "screenshots_badges/${name}-${numero_derniere_sauvegarde}.png"
-# do_screenshot "screenshots_badges/${name}-${numero_derniere_sauvegarde}.png"
+do_screenshot "screenshots_badges/${name}-${numero_derniere_sauvegarde}.png"
 hit_these_keys w z
 sleep 5
 
 
 # XXX conclusion
-echo git add screenshots*/*.png
-echo git commit -m "DONE `whoami` ($0) termine, auto commit avec 'make commit_done'"
-echo git checkout -- Pokemon_Yellow_FRENCH_GBC-HS.sav
-echo git push
+echo git add 'screenshots*/*.png'
+git add screenshots*/*.png
 
-pkill mgba
+echo git commit -m "DONE `whoami` ($0) termine, auto commit avec 'make commit_done'"
+git commit -m "DONE `whoami` ($0) termine, auto commit avec 'make commit_done'"
+
+cleanup_sav
+
+echo git push
+git push
+
 echo "Terminé pour cette fois, regardez https://github.com/Pokemon-via-GitHub-contre-Covid-2020-fr/Version-Jaune/commits/ pour voir le dernier commit avec des captures d'écrans"
