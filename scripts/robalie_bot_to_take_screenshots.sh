@@ -4,10 +4,12 @@
 #
 # Voir https://github.com/Pokemon-via-GitHub-contre-Covid-2020-fr/Version-Jaune/issues/19
 #
+clear
+echo "Lancement de Robalie ($0), le bot qui prend des captures d'écran de la partie en cours à ma place..."
 
 # XXX Initialisation
-type notify-send && notify-send "Lancement de Robalie, le bot qui prend des captures d'écran de la partie en cours à ma place"
-echo "Lancement de Robalie, le bot qui prend des captures d'écran de la partie en cours à ma place..."
+type notify-send > /dev/null 2>/dev/null && \
+       notify-send "Lancement de Robalie ($0), le bot qui prend des captures d'écran de la partie en cours à ma place"
 
 if type xdotool > /dev/null 2>/dev/null; then
        echo "xdotool est bien installé"
@@ -19,24 +21,31 @@ fi
 
 # XXX Vérification avant de jouer
 echo git pull
-# if { git log -1 | grep -q START; }; then
-#        exit 2
-# fi
-
+if { git log -1 | grep -q START; }; then
+       exit 2
+fi
 
 echo "The slot is free. Let's play!"
 
+name="Pokemon_Yellow_FRENCH_GBC-HS"
 
 # XXX lancement du jeu
 echo "Lancement de l'émulateur en travail de fond..."
-mgba -3 --savestate Pokemon_Yellow_FRENCH_GBC-HS.sav Pokemon_Yellow_FRENCH_GBC-HS.gbc &
+mgba -3 --savestate $name.sav $name.gbc &
 
 
 echo "Pause de 10 secondes..."
 sleep 10
-xx
+
 WID=$(xdotool search "mGBA" | head -1)
 xdotool windowactivate --sync $WID
+
+function cleanup_sav() {
+       echo git checkout -- Pokemon_Yellow_FRENCH_GBC-HS.sav
+       git checkout -- Pokemon_Yellow_FRENCH_GBC-HS.sav
+}
+trap cleanup_sav EXIT
+trap cleanup_sav SIGINT
 
 # XXX script pour simuler un appui d'une touche
 # http://wiki.linuxquestions.org/wiki/List_of_keysyms
@@ -73,17 +82,20 @@ else
 fi
 
 declare -i numero_derniere_sauvegarde
-numero_derniere_sauvegarde=$(find ./screenshots*/Pokemon_Yellow_FRENCH_GBC-HS-* | grep -o 'Pokemon_Yellow_FRENCH_GBC-HS-.*' | sed s/'Pokemon_Yellow_FRENCH_GBC-HS-'/''/g | sed s/'.png'/''/g | sort -n | tail -n1)
+numero_derniere_sauvegarde=$(find ./screenshots*/$name-* | grep -o "$name-.*" | sed s/"$name-"/""/g | sed s/".png"/""/g | sort -n | tail -n1)
 
 # Lance le jeu
 echo "Ouverture la fenêtre de mGBA et appui de touches simulé..."
 sleep 10
 
-hit_these_keys w w w w x x
+hit_these_keys w z w z w z w z x x
+sleep 10
+
+hit_these_keys x x
 # Capture d'écran position
 numero_derniere_sauvegarde+=1
-echo do_screenshot screenshots/Pokemon_Yellow_FRENCH_GBC-HS-${numero_derniere_sauvegarde}.png
-# do_screenshot screenshots/Pokemon_Yellow_FRENCH_GBC-HS-${numero_derniere_sauvegarde}.png
+echo do_screenshot "screenshots/${name}-${numero_derniere_sauvegarde}.png"
+# do_screenshot "screenshots/${name}-${numero_derniere_sauvegarde}.png"
 sleep 5
 
 
@@ -95,9 +107,9 @@ sleep 5
 hit_these_keys Return x
 
 numero_derniere_sauvegarde+=1
-echo do_screenshot screenshots_pokedex/Pokemon_Yellow_FRENCH_GBC-HS-${numero_derniere_sauvegarde}.png
-# do_screenshot screenshots_pokedex/Pokemon_Yellow_FRENCH_GBC-HS-${numero_derniere_sauvegarde}.png
-hit_these_keys w w
+echo do_screenshot "screenshots_pokedex/${name}-${numero_derniere_sauvegarde}.png"
+# do_screenshot "screenshots_pokedex/${name}-${numero_derniere_sauvegarde}.png"
+hit_these_keys w z w z
 sleep 5
 
 # Capture d'écran teams
@@ -107,9 +119,9 @@ sleep 5
 
 hit_these_keys Return Down x
 numero_derniere_sauvegarde+=1
-echo do_screenshot screenshots_teams/Pokemon_Yellow_FRENCH_GBC-HS-${numero_derniere_sauvegarde}.png
-# do_screenshot screenshots_teams/Pokemon_Yellow_FRENCH_GBC-HS-${numero_derniere_sauvegarde}.png
-hit_these_keys w w
+echo do_screenshot "screenshots_teams/${name}-${numero_derniere_sauvegarde}.png"
+# do_screenshot "screenshots_teams/${name}-${numero_derniere_sauvegarde}.png"
+hit_these_keys w z w z
 sleep 5
 
 # Capture d'écran maps
@@ -119,9 +131,9 @@ sleep 5
 
 hit_these_keys Return Down x x x
 numero_derniere_sauvegarde+=1
-echo do_screenshot screenshots_maps/Pokemon_Yellow_FRENCH_GBC-HS-${numero_derniere_sauvegarde}.png
-# do_screenshot screenshots_maps/Pokemon_Yellow_FRENCH_GBC-HS-${numero_derniere_sauvegarde}.png
-hit_these_keys w w w
+echo do_screenshot "screenshots_maps/${name}-${numero_derniere_sauvegarde}.png"
+# do_screenshot "screenshots_maps/${name}-${numero_derniere_sauvegarde}.png"
+hit_these_keys w z w z w z
 sleep 5
 
 # Capture d'écran badges
@@ -131,14 +143,15 @@ sleep 5
 
 hit_these_keys Return Down x
 numero_derniere_sauvegarde+=1
-echo do_screenshot screenshots_badges/Pokemon_Yellow_FRENCH_GBC-HS-${numero_derniere_sauvegarde}.png
-# do_screenshot screenshots_badges/Pokemon_Yellow_FRENCH_GBC-HS-${numero_derniere_sauvegarde}.png
-hit_these_keys w
+echo do_screenshot "screenshots_badges/${name}-${numero_derniere_sauvegarde}.png"
+# do_screenshot "screenshots_badges/${name}-${numero_derniere_sauvegarde}.png"
+hit_these_keys w z
 sleep 5
+
 
 # XXX conclusion
 echo git add screenshots*/*.png
-echo git commit -m "DONE `whoami` termine, auto commit avec 'make commit_done'`./scripts/zenity_script_to_enter_summary.sh`" || git commit -m "DONE `whoami` termine, auto commit avec 'make commit_done'"
+echo git commit -m "DONE `whoami` ($0) termine, auto commit avec 'make commit_done'"
 echo git checkout -- Pokemon_Yellow_FRENCH_GBC-HS.sav
 echo git push
 

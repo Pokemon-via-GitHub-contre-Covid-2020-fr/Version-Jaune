@@ -5,3 +5,5 @@
 # fichiers inutiles
 *~
 .*.swp
+
+.vscode/
