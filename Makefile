@@ -26,6 +26,9 @@ start_playing:
 start_playing_mgba:
 	mgba -6 --savestate Pokemon_Yellow_FRENCH_GBC-HS.sav Pokemon_Yellow_FRENCH_GBC-HS.gbc
 
+start_playing_mgba_old:
+	mgba -6 Pokemon_Yellow_FRENCH_GBC-HS.gbc
+
 start_playing_qt:
 	mgba-qt -6 --savestate Pokemon_Yellow_FRENCH_GBC-HS.sav Pokemon_Yellow_FRENCH_GBC-HS.gbc
 
