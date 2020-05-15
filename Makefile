@@ -20,7 +20,10 @@ check_dub:
 	du -b Pokemon_Yellow_FRENCH_GBC-HS.gbc
 	cat Pokemon_Yellow_FRENCH_GBC-HS.gbc.dub
 
-start_playing:
+pokemonsay:
+	pokemonsay "Let's play Pokémon" || cowsay "Let's play Pokémon"
+
+start_playing: pokemonsay
 	mgba -6 --savestate Pokemon_Yellow_FRENCH_GBC-HS.sav Pokemon_Yellow_FRENCH_GBC-HS.gbc
 
 start_playing_mgba:
