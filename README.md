@@ -27,7 +27,7 @@ Il faut suivre les instructions suivantes :
 
 ## Avec le `Makefile`
 
-Une fois le dépôt cloné, si vous êtes sous GNU/Linux ou Mac OS, le [fichier `Makefile`](https://github.com/Pokemon-via-GitHub-contre-Covid-2020-fr/Version-Jaune/blob/master/Makefile) donne quelques commandes pour automatiser certaines choses 
+Une fois le dépôt cloné, si vous êtes sous GNU/Linux ou Mac OS, le [fichier `Makefile`](https://github.com/Pokemon-via-GitHub-contre-Covid-2020-fr/Version-Jaune/blob/master/Makefile) donne quelques commandes pour automatiser certaines choses :
 
 - `make metadata` permet de vérifier que la ROM `Pokemon_Yellow_FRENCH_GBC-HS.gbc` téléchargée est la bonne ;
 - `make start_playing` permet de commencer à jouer avec mGBA,
@@ -81,26 +81,36 @@ Dernière ligne de l'historique :
 ---
 
 # Où en est-on dans l'aventure ?
-- Au tout début !
+- On a terminé le jeu : Ligue Pokémon battue le vendredi 15 mai, Mewtwo capturé le samedi 16 mai.
 
 ## Où est-on dans le jeu ?
 - [Regardez dans ce dossier](screenshots/)
-- TODO tout le monde doit prendre l'habitude de finir sa session de jeu en faisant une capture d'écran dans ce dossier !
   > Il faut juste montrer où on se trouve le héros dans le monde extérieur.
 
-## Où en est-on dans la progression des badges ?
-- [Regardez dans ce dossier](screenshots_badges/)
-- TODO tout le monde doit prendre l'habitude de finir sa session de jeu en faisant une capture d'écran dans ce dossier !
-  > Il faut juste montrer *le menu avec les badges et l'argent*.
-
-## Où est-on sur la carte ?
-- [Regardez dans ce dossier](screenshots_maps/)
-- TODO tout le monde doit prendre l'habitude de finir sa session de jeu en faisant une capture d'écran dans ce dossier !
-  > Il faut juste montrer où on se trouve le héros *sur la carte*.
+<img width="50%" src="gifs/world.gif" alt="GIF de l'équipe Pokémon évoluant au cours du temps">
 
 ## Quelle est l'équipe actuelle ?
 - [Regardez dans ce dossier](screenshots_teams/)
-- TODO tout le monde doit prendre l'habitude de finir sa session de jeu en faisant une capture d'écran dans ce dossier !
+
+<img width="50%" src="gifs/teams.gif" alt="GIF de l'équipe Pokémon évoluant au cours du temps">
+
+## Où en est-on dans la progression du Pokédex
+- [Regardez dans ce dossier](screenshots_pokedex/)
+  > Il faut juste montrer *le menu avec le Pokédex*.
+
+<img width="50%" src="gifs/pokedex.gif" alt="GIF de l'équipe Pokémon évoluant au cours du temps">
+
+## Où en est-on dans la progression des badges ?
+- [Regardez dans ce dossier](screenshots_badges/)
+  > Il faut juste montrer *le menu avec les badges et l'argent*.
+
+<img width="50%" src="gifs/badges.gif" alt="GIF de l'équipe Pokémon évoluant au cours du temps">
+
+## Où est-on sur la carte ?
+- [Regardez dans ce dossier](screenshots_maps/)
+  > Il faut juste montrer où on se trouve le héros *sur la carte*.
+
+<img width="50%" src="gifs/maps.gif" alt="GIF de l'équipe Pokémon évoluant au cours du temps">
 
 ---
 
