@@ -116,7 +116,7 @@ Dernière ligne de l'historique :
 
 ## :scroll: License ? [![GitHub license](https://img.shields.io/github/license/Pokemon-via-GitHub-contre-Covid-2020-fr/meta.svg)](https://github.com/Pokemon-via-GitHub-contre-Covid-2020-fr/meta/blob/master/LICENSE)
 MIT Licensed (file [LICENSE](LICENSE)).
-© [Lilian Besson](https://GitHub.com/Naereen), 2020.
+© [Lilian Besson](https://GitHub.com/Naereen) et [contributeurs et contributrices](https://github.com/Pokemon-via-GitHub-contre-Covid-2020-fr/Version-Jaune/graphs/contributors), 2020.
 
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Pokemon-via-GitHub-contre-Covid-2020-fr/meta/graphs/commit-activity)
 [![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://GitHub.com/Naereen/ama)
